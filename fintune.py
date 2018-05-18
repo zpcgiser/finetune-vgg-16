@@ -77,7 +77,7 @@ learn_rate=tf.train.exponential_decay(0.001,
 
 
 with tf.name_scope('train'):
-    train_op=tf.train.AdamOptimizer(learn_rate,global_step=global_step).minimize(loss)
+    train_op=tf.train.AdamOptimizer(learn_rate).minimize(loss,global_step=global_step)
 
 
 #可视化损失值
