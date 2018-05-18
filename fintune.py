@@ -8,7 +8,7 @@ Created on Wed May 16 11:24:02 2018
 import os
 
 import tensorflow as tf  
-import vgg16
+import vgg16_copy
 from datetime import datetime
 
 def load_dataset(filepath):
@@ -77,7 +77,7 @@ learn_rate=tf.train.exponential_decay(0.001,
 
 
 with tf.name_scope('train'):
-    train_op=tf.train.AdamOptimizer(learn_rate).minimize(loss)
+    train_op=tf.train.AdamOptimizer(learn_rate,global_step=global_step).minimize(loss)
 
 
 #可视化损失值
